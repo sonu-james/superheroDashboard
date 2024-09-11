@@ -1,0 +1,13 @@
+*{
+  padding: 0px;
+  margin:0px;
+  box-sizing: border-box;
+
+}
+.login{
+  background-image: url(https://wallpapercave.com/wp/wp3582703.jpg);
+  background-size: cover;
+}
+.loginmain{
+  background-color: rgba(2, 21, 22, 0.653);
+}
