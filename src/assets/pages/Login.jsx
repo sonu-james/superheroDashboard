@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -19,15 +21,21 @@ function Login() {
   const handleLogin =async()=>{
     const {email,password}=loginDetails
     if(!email ||!password){
-      alert('Plz fill the form completely')
+      toast.info('Plz fill the form completely')
     }
-    else if(email=='hero@gmail.com' && password=='hero123'){
-      alert('login Successfully')
-      navigate('/superherodash')
+    else if(email==='hero@gmail.com' && password==='hero123'){
+      toast.success('login Successfully')
+      localStorage.setItem("emailData","hero@gmail.com")
+      localStorage.setItem("passwordData","hero123")
+
+setTimeout(()=>{
+  navigate('/superherodash')
+},3000)
+      
      
     }
     else{
-      alert('Invalid Username and Password')
+      toast.error('Invalid Username and Password')
      
     }
   }
@@ -46,7 +54,7 @@ function Login() {
             <h2>
             <FontAwesomeIcon icon={faMask} beat style={{color: "#ff0019",}} className='me-3 mt-5' />Super Hero</h2>
             
-              <h5 style={{color: "#ff0019",}}>Sign in to your Account</h5>
+              <h5 style={{color: "#ff0019"}}>Sign in to your Account</h5>
             <form className=' w-75 align-items-center justify-content-center rounded p-4'  >
              
               <div className='mb-3'>
@@ -69,6 +77,7 @@ function Login() {
       </div>
      
     </div>
+    <ToastContainer position='top-center' theme='colored' />
    </>
   )
 }
