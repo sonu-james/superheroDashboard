@@ -66,7 +66,7 @@ setTimeout(()=>{
 
               <div className='mt-4'>
                   <div>
-                    <button type="button" className='btn btn-outline-danger fs-5  w-100 mb-2 ' onClick={handleLogin}>Login</button>
+                    <button type="button" className='btn btn-danger fs-5  w-100 mb-2 ' onClick={handleLogin}>Login</button>
                     
                   </div>
               </div>
